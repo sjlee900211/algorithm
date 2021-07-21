@@ -4,7 +4,7 @@ class Node() : # 붕어빵 기계
         self.data = None
         self.link = None
         
-def printNodes(start):
+def printNodes(start) :
     current = start
     print(current.data, end='  ')
     while current.link != None:
@@ -12,6 +12,15 @@ def printNodes(start):
         print(current.data, end='  ')
     print()
 
+def insert_node(findData, insertData) :
+    global memory, head, current, pre
+    if (findData == head.data) :        
+        node = Node()
+        node.data =  insertData
+        node.link = head
+        head = node
+        return
+        
 
 ## 전역
 memory = []
