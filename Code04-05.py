@@ -7,7 +7,7 @@ class Node() : # 붕어빵 기계
 def printNodes(start) :
     current = start
     print(current.data, end='  ')
-    while current.link != None:
+    while current.link != None :
         current = current.link
         print(current.data, end='  ')
     print()
@@ -25,7 +25,7 @@ def insert_node(findData, insertData) :
     while current.link != None :
         pre = current
         current = current.link
-        if (current.data ==findData) :
+        if (current.data == findData) :
             node = Node()
             node.data = insertData
             node.link = current
