@@ -19,7 +19,20 @@ def insert_node(findData, insertData) :
         node.data =  insertData
         node.link = head
         head = node
+        memory.append(node)
         return
+    current = head
+    while current.link != None :
+        pre = current
+        current = current.link
+        if (current.data ==findData) :
+            node = Node()
+            node.data = insertData
+            node.link = current
+            pre.link = node
+            memory.append(node)
+            return
+            
         
 
 ## 전역
@@ -43,4 +56,9 @@ for data in dataArray[1:] :
     pre.link = node
     memory.append(node)
     
+printNodes(head)
+
+insert_node('다현', '화사')
+printNodes(head)
+insert_node('사나', '솔라')
 printNodes(head)
