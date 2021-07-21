@@ -27,6 +27,14 @@ node5 = Node()
 node5.data = '지효'
 node4.link = node5
 
+# newNode = Node()
+# newNode.data = '수진'
+# newNode.link = node2.link
+# node2.link = newNode
+
+node2.link = node3.link
+del(node3)
+
 # print(node1.data, end='   ')
 # print(node1.link.data, end='   ')
 # print(node1.link.link.data, end='   ')
