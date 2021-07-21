@@ -1,4 +1,8 @@
-## 함수
+## 함수부
+def add_data(friend) : # 함수 = FUnction = 기능
+    katok.append(None)
+    kLen = len(katok)
+    katok[kLen-1] = friend
 
 
 ## 전역변수
@@ -6,17 +10,10 @@ katok = [] # 빈 배열
 
 
 ## 메인코드
-katok.append(None) # 빈칸 1개 확보
-katok[0] = '다현'
+add_data('다현')
+add_data('정연')
+add_data('쯔위')
+add_data('사나')
+add_data('지효')
 
-katok.append(None)
-katok[1] = '정연'
-
-katok.append(None)
-katok[2] = '쯔위'
-
-katok.append(None)
-katok[3] = '사나'
-
-katok.append(None)
-katok[4] = '지효'
+print(katok)
