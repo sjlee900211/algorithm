@@ -32,8 +32,37 @@ def insert_node(findData, insertData) :
             pre.link = node
             memory.append(node)
             return
-            
+    node = Node()
+    node.data = insertData
+    current.link = node
+    memory.append(node)
+    
+def delete_node(delData) : 
+    global memory, head, current, pre
+    if (head.data == delData) :
+        current = head
+        head = head.link
+        del(current)
+        return
+    current = head
+    while (current.link != None) :
+        pre = current
+        current = current.link
+        if (current.data == delData) :
+            pre.link = current.link
+            del(current)
+            return      
         
+def find_node(findData) :
+    global memory, head, current, pre
+    current = head
+    if current.data == findData :
+        return current
+    while (current.link != None) :
+        current = current.link
+        if current.data == findData:
+            return current
+    return Node() # 빈 노드 반환
 
 ## 전역
 memory = []
@@ -62,3 +91,19 @@ insert_node('다현', '화사')
 printNodes(head)
 insert_node('사나', '솔라')
 printNodes(head)
+insert_node('지효', '문별')
+printNodes(head)
+
+delete_node('화사')
+printNodes(head)
+delete_node('사나')
+printNodes(head)
+delete_node('문별')
+printNodes(head)
+
+fNode = find_node('다현')
+print(fNode.data)
+fNode = find_node('정연')
+print(fNode.data)
+fNode = find_node('문별')
+print(fNode.data)
