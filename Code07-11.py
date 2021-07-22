@@ -41,7 +41,7 @@ def peek() :
 ## 전역
 SIZE = 5
 queue = [None for _ in range(SIZE)]
-front, rear = -1, -1
+front, rear = 0, 0
 
 ## 메인
 ## 메인
