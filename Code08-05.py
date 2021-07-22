@@ -39,3 +39,25 @@ for name in nameAry[1:] : # ['레드벨벳', '마마무', '에이핑크', '걸�
     memory.append(node)
 
 print('이진 탐색 트리! 구성 완료')
+
+## 데이터를 검색(=탐색)할 때 완전 효율적
+# findName = '마마무'
+findName = '핑클'
+
+current = root
+count = 0
+while True :
+    count += 1
+    if current.data == findName :
+        print(findName, '오예 찾았다!!', count, "번")
+        break
+    elif findName < current.data :
+        if current.left == None :
+            print(findName, '아쉽다... 못 찾음')
+            break
+        current = current.left
+    else :
+        if current.right == None :
+            print(findName, '아쉽다... 못 찾음')
+            break
+        current = current.right
