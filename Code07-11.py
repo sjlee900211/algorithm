@@ -1,23 +1,9 @@
 ## 함수
-# def isQueueFull() : 
-#     global SIZE, queue, front, rear
-#     if (rear >= SIZE-1) :
-#         return True
-#     else : 
-#         return False
-
 def isQueueFull() : 
     global SIZE, queue, front, rear
-    if (rear != SIZE -1) :
-        return False
-    elif (rear == SIZE-1) and (front == -1) :
+    if (rear + 1) % SIZE == front :
         return True
-    else :
-        for i in range(front+1, SIZE, 1) :
-            queue[i-1] = queue[i]
-            queue[i] = None
-        front -= 1
-        rear -= 1
+    else : 
         return False
 
 def enQueue(data) :
@@ -25,7 +11,7 @@ def enQueue(data) :
     if (isQueueFull()) :
         print('큐 꽉!')
         return
-    rear += 1
+    rear = (rear + 1) % SIZE
     queue[rear] = data
 
 def isQueueEmpty() :
@@ -40,7 +26,7 @@ def deQueue() :
     if (isQueueEmpty()) :
         print('큐 텅!')
         return None    
-    front += 1
+    front = (front + 1) % SIZE
     data = queue[front]
     queue[front]
     return data
@@ -50,7 +36,7 @@ def peek() :
     if (isQueueEmpty()) :
         print('큐 텅!')
         return None
-    return queue[front+1]
+    return queue[(front+1) % SIZE]
 
 ## 전역
 SIZE = 5
@@ -65,6 +51,10 @@ enQueue('문별')
 enQueue('휘인')
 enQueue('선미')
 print('출구<---', queue, '<--입구')
+retData = deQueue()
+print('입장 손님-->', retData)
+retData = deQueue()
+print('입장 손님-->', retData)
 retData = deQueue()
 print('입장 손님-->', retData)
 retData = deQueue()
