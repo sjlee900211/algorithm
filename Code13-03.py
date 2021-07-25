@@ -26,5 +26,3 @@ if position == -1 :
     print(' 없다...')
 else :
     print(findData, '는', position, '위치에 있음')
-    
-    이거를 형상관리를 넣어서 올려야하는데이것도 배워야함
